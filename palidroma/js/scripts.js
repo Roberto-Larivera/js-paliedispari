@@ -1,4 +1,4 @@
-console.log('int ok');
+//console.log('int ok');
 /*
 
 Palidroma
@@ -68,16 +68,16 @@ alert(message);
 function separareParola (parola){
 
     const arrayParola = parola.split ("");
-    console.log('Prima Array',arrayParola, typeof arrayParola);
+    //console.log('Prima Array',arrayParola, typeof arrayParola);
 
     let arrayReverseParola = parola.split ("");
     arrayReverseParola = arrayReverseParola.reverse();
-    console.log('Seconda Array',arrayReverseParola, typeof arrayReverseParola);
+    //console.log('Seconda Array',arrayReverseParola, typeof arrayReverseParola);
 
     const parolaInt = arrayParola.join("");
-    console.log('parolaInt',parolaInt, typeof parolaInt);
+    //console.log('parolaInt',parolaInt, typeof parolaInt);
     const parolaReverseInt = arrayReverseParola.join("");
-    console.log('parolaReverseInt',parolaReverseInt, typeof parolaReverseInt);
+    //console.log('parolaReverseInt',parolaReverseInt, typeof parolaReverseInt);
     if(parolaInt == parolaReverseInt){
         return 'È una parola Palindroma';
     }
