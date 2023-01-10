@@ -13,6 +13,11 @@ Creare una funzione per capire se la parola inserita è palindroma
 
 */
 
+
+
+/*                  SOLUZIONE 1 ANALIZZARE LETTERA PER LETTERA E USO DI BREAK -------- NON OTTIMALE 
+
+
 function separareParola (parola){
 
     const arrayParola = parola.split ("");
@@ -27,28 +32,64 @@ function separareParola (parola){
     console.log(lenghtReverseParola);
 
     
+    
     let i = 0;
-    let control = false
-    while((i < lenghtParola) || (control == true)){
+    while((i < lenghtParola)){
         let carattereA = arrayParola[i]
         let carattereB = arrayReverseParola[i]
         
         if(carattereA != carattereB){
-            control = true
-            console.log('Non è una parola Palindroma')
-            //break;
+            return 'Non è una parola Palindroma';
+            break;
 
         }
         else{
-            console.log('È una parola Palindroma')
-            control = false
+            return 'È una parola Palindroma';
         }
-        console.log('control',control);
        i++;
     }
     
 }
 
-const inputUtente = 'cioooo';
+const inputUtente = prompt('Inserisci la parola da analizzare');
 
 separareParola(inputUtente);
+const message = separareParola(inputUtente);
+console.log(message);
+alert(message);
+
+
+*/
+
+
+
+//                          SOLUZIONE 2 ANALIZZA LE DUE PAROLE INTERE DIRETTAMENTE CON UN IF -------- LA PIÙ OTTIMALE
+
+function separareParola (parola){
+
+    const arrayParola = parola.split ("");
+    console.log('Prima Array',arrayParola, typeof arrayParola);
+
+    let arrayReverseParola = parola.split ("");
+    arrayReverseParola = arrayReverseParola.reverse();
+    console.log('Seconda Array',arrayReverseParola, typeof arrayReverseParola);
+
+    const parolaInt = arrayParola.join("");
+    console.log('parolaInt',parolaInt, typeof parolaInt);
+    const parolaReverseInt = arrayReverseParola.join("");
+    console.log('parolaReverseInt',parolaReverseInt, typeof parolaReverseInt);
+    if(parolaInt == parolaReverseInt){
+        return 'È una parola Palindroma';
+    }
+    else{
+        return 'Non è una parola Palindroma';
+    }
+
+}
+
+const inputUtente = prompt('Inserisci la parola da analizzare');
+
+//separareParola(inputUtente);
+const message = separareParola(inputUtente);
+console.log(message);
+alert(message);
