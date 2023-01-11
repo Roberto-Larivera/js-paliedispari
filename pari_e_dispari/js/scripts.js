@@ -27,11 +27,11 @@ function controlNum (min, max, input){                                          
 }
 
 function controlVal (input){                                                            // funzione controllo valore di gioco tramite quello scelto dall'utente
-    while ((input != 'pari') && (input != 'Pari') && (input != 'dispari') && (input != 'Dispari')){
+    while ((input != 'pari') && (input != 'dispari')){
         //console.log('Valore non valido!');
         alert('Valore non valido!');
         input = prompt('Scelta non valida! Scegli tra pari e dispari');
-        //console.log('input',input, typeof input);
+        console.log('input',input, typeof input);
     }
 }
 
@@ -43,8 +43,8 @@ let numberUser = parseInt(prompt('Scegli un numero tra 1 e 5'));                
 controlNum(1,5,numberUser);                                                             // funzione controllo input numero utente + possibilità di modificare i due numeri min max
 
 
-let choiceUser = prompt('Scegli tra pari e dispari');                                    // richiesta se pari o dispari scritto
-//console.log('choiceUser',choiceUser, typeof choiceUser);
+let choiceUser = prompt('Scegli tra pari e dispari').toLowerCase();                                    // richiesta se pari o dispari scritto
+console.log('choiceUser',choiceUser, typeof choiceUser);
 
 controlVal(choiceUser);                                                                 // funzione controllo valore di gioco tramite quello scelto dall'utente
 
@@ -60,7 +60,7 @@ const numberSum = numberComputer + numberUser;
 
 if ( numberSum % 2 == 0){
     console.log('Pari');
-    if(choiceUser == 'Pari' || choiceUser == 'pari'){
+    if(choiceUser == 'pari'){
         alert('Hai vinto tu!')
     }
     else{
@@ -69,7 +69,7 @@ if ( numberSum % 2 == 0){
 }
 else{
     console.log('Dispari');
-    if(choiceUser == 'Dispari' || choiceUser == 'dispari'){
+    if(choiceUser == 'dispari'){
         alert('Hai vinto tu!')
     }
     else{
